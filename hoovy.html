@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-12-23 Sat 00:35 -->
+<!-- 2017-12-23 Sat 01:50 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Hoovy Home</title>
@@ -180,6 +180,7 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
+<link rel='stylesheet' href='style.css' type='text/css'/>
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -234,41 +235,41 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgf827817">1. Init</a></li>
-<li><a href="#orgfbd1b27">2. Start Page</a></li>
-<li><a href="#orgb70e696">3. Org Mode</a></li>
-<li><a href="#org35cfc36">4. Projects</a>
+<li><a href="#org28e1f10">1. Init</a></li>
+<li><a href="#org642152c">2. Start Page</a></li>
+<li><a href="#orgfe88dca">3. Org Mode</a></li>
+<li><a href="#org20e9e7a">4. Projects</a>
 <ul>
-<li><a href="#org1a19c13">4.1. &lt;Nova&gt;</a></li>
-<li><a href="#org46be9e9">4.2. Gamelike</a></li>
-<li><a href="#orgb8d3ea3">4.3. Novapilot</a></li>
-<li><a href="#org7939e2d">4.4. Monsterpiece</a></li>
+<li><a href="#org1d25f4c">4.1. &lt;Nova&gt;</a></li>
+<li><a href="#org6faf175">4.2. Gamelike</a></li>
+<li><a href="#orge3cbb67">4.3. Novapilot</a></li>
+<li><a href="#org1552424">4.4. Monsterpiece</a></li>
 </ul>
 </li>
-<li><a href="#org0f7e5fd">5. Cancelled Projects</a>
+<li><a href="#org06899eb">5. Cancelled Projects</a>
 <ul>
-<li><a href="#orgb0bc0cc">5.1. Mini Macs (hu-macs)</a></li>
-<li><a href="#org0cda518">5.2. Erl-Dev</a></li>
-<li><a href="#org997cd46">5.3. Nova</a></li>
-<li><a href="#orge00a903">5.4. The Middle</a></li>
-<li><a href="#org40acc09">5.5. HaskellPlugin</a></li>
+<li><a href="#orga7c69d6">5.1. Mini Macs (hu-macs)</a></li>
+<li><a href="#org6b7a4ce">5.2. Erl-Dev</a></li>
+<li><a href="#orgd7b5403">5.3. Nova</a></li>
+<li><a href="#org5b6f1ae">5.4. The Middle</a></li>
+<li><a href="#orga3027ca">5.5. HaskellPlugin</a></li>
 </ul>
 </li>
-<li><a href="#org78dd5bb">6. Programming</a>
+<li><a href="#org846a07b">6. Programming</a>
 <ul>
-<li><a href="#org95ecb56">6.1. Update Emacs</a></li>
-<li><a href="#orgb71b52d">6.2. git status</a></li>
-<li><a href="#org1ffe584">6.3. dropbox</a></li>
+<li><a href="#org4acf1ad">6.1. Update Emacs</a></li>
+<li><a href="#org5fca9f5">6.2. git status</a></li>
+<li><a href="#org0c73e04">6.3. dropbox</a></li>
 </ul>
 </li>
-<li><a href="#orgb03cf65">7. Communications</a></li>
-<li><a href="#orgfd2854c">8. News</a></li>
+<li><a href="#org9494d2d">7. Communications</a></li>
+<li><a href="#org2d59a77">8. News</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgf827817" class="outline-2">
-<h2 id="orgf827817"><span class="section-number-2">1</span> Init</h2>
+<div id="outline-container-org28e1f10" class="outline-2">
+<h2 id="org28e1f10"><span class="section-number-2">1</span> Init</h2>
 <div class="outline-text-2" id="text-1">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="color: #70b4fa;">defgroup</span> <span style="color: #dd9dd4;">hoovy</span> nil
@@ -295,8 +296,8 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orgfbd1b27" class="outline-2">
-<h2 id="orgfbd1b27"><span class="section-number-2">2</span> Start Page</h2>
+<div id="outline-container-org642152c" class="outline-2">
+<h2 id="org642152c"><span class="section-number-2">2</span> Start Page</h2>
 <div class="outline-text-2" id="text-2">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="color: #70b4fa;">defun</span> <span style="color: #fa4;">hoovy-spawn-app</span> (name file)
@@ -344,8 +345,8 @@ for the JavaScript code in this tag.
 </div>
 
 
-<div id="outline-container-orgb70e696" class="outline-2">
-<h2 id="orgb70e696"><span class="section-number-2">3</span> Org Mode</h2>
+<div id="outline-container-orgfe88dca" class="outline-2">
+<h2 id="orgfe88dca"><span class="section-number-2">3</span> Org Mode</h2>
 <div class="outline-text-2" id="text-3">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">
@@ -384,12 +385,28 @@ for the JavaScript code in this tag.
 
 (<span style="color: #70b4fa;">setq</span> org-publish-project-alist
       `((<span style="color: #99d790;">"hoovy"</span>
-     <span style="color: #ff8;">:base-directory</span> ,hoovy-root
-     <span style="color: #ff8;">:recursive</span> t
-     <span style="color: #ff8;">:publishing-directory</span> ,(hoovy-www)
-     <span style="color: #ff8;">:publishing-function</span> org-html-publish-to-html
-     <span style="color: #ff8;">:html-head-extra</span> <span style="color: #99d790;">""</span>
-     <span style="color: #ff8;">:components</span> ())))
+         <span style="color: #ff8;">:components</span> (<span style="color: #99d790;">"hoovy-org"</span> <span style="color: #99d790;">"hoovy-art"</span> <span style="color: #99d790;">"hoovy-code"</span>))
+        (<span style="color: #99d790;">"hoovy-org"</span>
+         <span style="color: #ff8;">:auto-sitemap</span> t
+         <span style="color: #ff8;">:base-directory</span> ,hoovy-root
+         <span style="color: #ff8;">:base-extension</span> <span style="color: #99d790;">"org"</span>
+         <span style="color: #ff8;">:publishing-directory</span> ,(hoovy-www)
+         <span style="color: #ff8;">:publishing-function</span> org-html-publish-to-html
+         <span style="color: #ff8;">:recursive</span> t
+         <span style="color: #ff8;">:html-head</span> <span style="color: #99d790;">"&lt;link rel='stylesheet' href='style.css' type='text/css'/&gt;"</span>
+         <span style="color: #ff8;">:html-head-extra</span> <span style="color: #99d790;">""</span>
+         <span style="color: #ff8;">:html-preamble</span> t
+         <span style="color: #ff8;">:components</span> ())
+        (<span style="color: #99d790;">"hoovy-art"</span>
+         <span style="color: #ff8;">:base-directory</span> ,(concat hoovy-root <span style="color: #99d790;">"/art/"</span>)
+         <span style="color: #ff8;">:base-extension</span> <span style="color: #99d790;">"jpg</span><span style="color: #99d790; font-weight: bold;">\\</span><span style="color: #99d790; font-weight: bold;">|</span><span style="color: #99d790;">gif</span><span style="color: #99d790; font-weight: bold;">\\</span><span style="color: #99d790; font-weight: bold;">|</span><span style="color: #99d790;">png</span><span style="color: #99d790; font-weight: bold;">\\</span><span style="color: #99d790; font-weight: bold;">|</span><span style="color: #99d790;">svg"</span>
+         <span style="color: #ff8;">:publishing-directory</span> ,(hoovy-www)
+         <span style="color: #ff8;">:publishing-function</span> org-publish-attachment)
+        (<span style="color: #99d790;">"hoovy-code"</span>
+         <span style="color: #ff8;">:base-directory</span> ,(concat hoovy-root <span style="color: #99d790;">"/apps/"</span>)
+         <span style="color: #ff8;">:base-extension</span> <span style="color: #99d790;">"css</span><span style="color: #99d790; font-weight: bold;">\\</span><span style="color: #99d790; font-weight: bold;">|</span><span style="color: #99d790;">el</span><span style="color: #99d790; font-weight: bold;">\\</span><span style="color: #99d790; font-weight: bold;">|</span><span style="color: #99d790;">js"</span>
+         <span style="color: #ff8;">:publishing-directory</span> ,(hoovy-www)
+         <span style="color: #ff8;">:publishing-function</span> org-publish-attachment)))
 
 (org-display-inline-images t t)
 (<span style="color: #70b4fa;">setq</span> org-edit-src-content-indentation 0
@@ -409,12 +426,12 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org35cfc36" class="outline-2">
-<h2 id="org35cfc36"><span class="section-number-2">4</span> Projects</h2>
+<div id="outline-container-org20e9e7a" class="outline-2">
+<h2 id="org20e9e7a"><span class="section-number-2">4</span> Projects</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-org1a19c13" class="outline-3">
-<h3 id="org1a19c13"><span class="section-number-3">4.1</span> &lt;Nova&gt;</h3>
+<div id="outline-container-org1d25f4c" class="outline-3">
+<h3 id="org1d25f4c"><span class="section-number-3">4.1</span> &lt;Nova&gt;</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 Common Lisp game development and animation and music production tools.
@@ -422,8 +439,8 @@ Common Lisp game development and animation and music production tools.
 </div>
 </div>
 
-<div id="outline-container-org46be9e9" class="outline-3">
-<h3 id="org46be9e9"><span class="section-number-3">4.2</span> Gamelike</h3>
+<div id="outline-container-org6faf175" class="outline-3">
+<h3 id="org6faf175"><span class="section-number-3">4.2</span> Gamelike</h3>
 <div class="outline-text-3" id="text-4-2">
 <p>
 Roguelike game inspired by Ragnarok Online and Shiren: The Wanderer.
@@ -431,8 +448,8 @@ Roguelike game inspired by Ragnarok Online and Shiren: The Wanderer.
 </div>
 </div>
 
-<div id="outline-container-orgb8d3ea3" class="outline-3">
-<h3 id="orgb8d3ea3"><span class="section-number-3">4.3</span> Novapilot</h3>
+<div id="outline-container-orge3cbb67" class="outline-3">
+<h3 id="orge3cbb67"><span class="section-number-3">4.3</span> Novapilot</h3>
 <div class="outline-text-3" id="text-4-3">
 <p>
 2D game inspired by Bangai-O
@@ -441,8 +458,8 @@ Built in level editor
 </div>
 </div>
 
-<div id="outline-container-org7939e2d" class="outline-3">
-<h3 id="org7939e2d"><span class="section-number-3">4.4</span> Monsterpiece</h3>
+<div id="outline-container-org1552424" class="outline-3">
+<h3 id="org1552424"><span class="section-number-3">4.4</span> Monsterpiece</h3>
 <div class="outline-text-3" id="text-4-4">
 <p>
 2D game inspired by Mario Bros and Smash Bros and Metroid and Castlevania.
@@ -452,12 +469,12 @@ Single-room monster breed/fight/collect maze platform action.
 </div>
 </div>
 
-<div id="outline-container-org0f7e5fd" class="outline-2">
-<h2 id="org0f7e5fd"><span class="section-number-2">5</span> Cancelled Projects</h2>
+<div id="outline-container-org06899eb" class="outline-2">
+<h2 id="org06899eb"><span class="section-number-2">5</span> Cancelled Projects</h2>
 <div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-orgb0bc0cc" class="outline-3">
-<h3 id="orgb0bc0cc"><span class="section-number-3">5.1</span> Mini Macs (hu-macs)</h3>
+<div id="outline-container-orga7c69d6" class="outline-3">
+<h3 id="orga7c69d6"><span class="section-number-3">5.1</span> Mini Macs (hu-macs)</h3>
 <div class="outline-text-3" id="text-5-1">
 <p>
 <a href="ectron.el">Emacs Electron</a>
@@ -466,8 +483,8 @@ Single-room monster breed/fight/collect maze platform action.
 </div>
 </div>
 
-<div id="outline-container-org0cda518" class="outline-3">
-<h3 id="org0cda518"><span class="section-number-3">5.2</span> Erl-Dev</h3>
+<div id="outline-container-org6b7a4ce" class="outline-3">
+<h3 id="org6b7a4ce"><span class="section-number-3">5.2</span> Erl-Dev</h3>
 <div class="outline-text-3" id="text-5-2">
 <p>
 Erlang multiplayer game server. Supported IRC and other pieces. <a href="http://github.com/humasect/erl-dev">http://github.com/humasect/erl-dev</a>
@@ -475,8 +492,8 @@ Erlang multiplayer game server. Supported IRC and other pieces. <a href="http://
 </div>
 </div>
 
-<div id="outline-container-org997cd46" class="outline-3">
-<h3 id="org997cd46"><span class="section-number-3">5.3</span> Nova</h3>
+<div id="outline-container-orgd7b5403" class="outline-3">
+<h3 id="orgd7b5403"><span class="section-number-3">5.3</span> Nova</h3>
 <div class="outline-text-3" id="text-5-3">
 <p>
 Haskell realtime 2D graphics and media engine. <a href="http://github.com/humasect/Nova">http://github.com/humasect/Nova</a>
@@ -485,8 +502,8 @@ Website with documentation and tutorial is missing. ( <a href="http://hoovy.org"
 </div>
 </div>
 
-<div id="outline-container-orge00a903" class="outline-3">
-<h3 id="orge00a903"><span class="section-number-3">5.4</span> The Middle</h3>
+<div id="outline-container-org5b6f1ae" class="outline-3">
+<h3 id="org5b6f1ae"><span class="section-number-3">5.4</span> The Middle</h3>
 <div class="outline-text-3" id="text-5-4">
 <p>
 Objective-C library for iOS and macOS for high performance turtle-style graphics and game development for Emacs and Xcode.
@@ -494,8 +511,8 @@ Objective-C library for iOS and macOS for high performance turtle-style graphics
 </div>
 </div>
 
-<div id="outline-container-org40acc09" class="outline-3">
-<h3 id="org40acc09"><span class="section-number-3">5.5</span> HaskellPlugin</h3>
+<div id="outline-container-orga3027ca" class="outline-3">
+<h3 id="orga3027ca"><span class="section-number-3">5.5</span> HaskellPlugin</h3>
 <div class="outline-text-3" id="text-5-5">
 <p>
 <a href="http://github.com/humasect/HaskellPlugin">http://github.com/humasect/HaskellPlugin</a>
@@ -505,12 +522,12 @@ Plugin for Haskell for old version of Xcode.
 </div>
 </div>
 
-<div id="outline-container-org78dd5bb" class="outline-2">
-<h2 id="org78dd5bb"><span class="section-number-2">6</span> Programming</h2>
+<div id="outline-container-org846a07b" class="outline-2">
+<h2 id="org846a07b"><span class="section-number-2">6</span> Programming</h2>
 <div class="outline-text-2" id="text-6">
 </div>
-<div id="outline-container-org95ecb56" class="outline-3">
-<h3 id="org95ecb56"><span class="section-number-3">6.1</span> Update Emacs</h3>
+<div id="outline-container-org4acf1ad" class="outline-3">
+<h3 id="org4acf1ad"><span class="section-number-3">6.1</span> Update Emacs</h3>
 <div class="outline-text-3" id="text-6-1">
 <div class="org-src-container">
 <pre class="src src-shell"><span style="color: #ff8;">cd</span> ~/Downloads/emacs
@@ -522,8 +539,8 @@ make
 </div>
 </div>
 
-<div id="outline-container-orgb71b52d" class="outline-3">
-<h3 id="orgb71b52d"><span class="section-number-3">6.2</span> git status</h3>
+<div id="outline-container-org5fca9f5" class="outline-3">
+<h3 id="org5fca9f5"><span class="section-number-3">6.2</span> git status</h3>
 <div class="outline-text-3" id="text-6-2">
 <div class="org-src-container">
 <pre class="src src-shell">git status
@@ -532,8 +549,8 @@ make
 </div>
 </div>
 
-<div id="outline-container-org1ffe584" class="outline-3">
-<h3 id="org1ffe584"><span class="section-number-3">6.3</span> dropbox</h3>
+<div id="outline-container-org0c73e04" class="outline-3">
+<h3 id="org0c73e04"><span class="section-number-3">6.3</span> dropbox</h3>
 <div class="outline-text-3" id="text-6-3">
 <div class="org-src-container">
 <pre class="src src-shell">dropbox start &amp;&amp; dropbox status
@@ -543,8 +560,8 @@ make
 </div>
 </div>
 
-<div id="outline-container-orgb03cf65" class="outline-2">
-<h2 id="orgb03cf65"><span class="section-number-2">7</span> Communications</h2>
+<div id="outline-container-org9494d2d" class="outline-2">
+<h2 id="org9494d2d"><span class="section-number-2">7</span> Communications</h2>
 <div class="outline-text-2" id="text-7">
 <p>
 <a href="/irc.freenode.net/#emacs">#emacs on freenode</a>
@@ -552,8 +569,8 @@ make
 </div>
 </div>
 
-<div id="outline-container-orgfd2854c" class="outline-2">
-<h2 id="orgfd2854c"><span class="section-number-2">8</span> News</h2>
+<div id="outline-container-org2d59a77" class="outline-2">
+<h2 id="org2d59a77"><span class="section-number-2">8</span> News</h2>
 <div class="outline-text-2" id="text-8">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -578,7 +595,7 @@ make
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Lyndon Tremblay</p>
-<p class="date">Created: 2017-12-23 Sat 00:35</p>
+<p class="date">Created: 2017-12-23 Sat 01:50</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

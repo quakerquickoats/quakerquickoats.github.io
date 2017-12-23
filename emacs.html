@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-12-23 Sat 00:35 -->
+<!-- 2017-12-23 Sat 01:50 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>humasect emacs configuration</title>
@@ -180,6 +180,7 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
+<link rel='stylesheet' href='style.css' type='text/css'/>
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -234,22 +235,22 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgbf38161">1. Startup</a></li>
-<li><a href="#orgc7e7322">2. Packages</a></li>
-<li><a href="#orge7736af">3. Display</a></li>
-<li><a href="#orgf4c5424">4. Workspace</a></li>
-<li><a href="#org65c89e6">5. Communications</a></li>
-<li><a href="#orgba4e074">6. Objective CAML</a></li>
-<li><a href="#org694a3eb">7. Prolog</a></li>
-<li><a href="#org2802150">8. Erlang</a></li>
-<li><a href="#orgd901d2f">9. Lisp</a></li>
-<li><a href="#org1ac0d17">10. Hoovy</a></li>
+<li><a href="#org4ad93da">1. Startup</a></li>
+<li><a href="#orgcfcda5f">2. Packages</a></li>
+<li><a href="#orgff89365">3. Display</a></li>
+<li><a href="#org483aba2">4. Workspace</a></li>
+<li><a href="#org1cbdc71">5. Communications</a></li>
+<li><a href="#orgf4bc153">6. Objective CAML</a></li>
+<li><a href="#orgfd0b3df">7. Prolog</a></li>
+<li><a href="#orge46e47d">8. Erlang</a></li>
+<li><a href="#org59df36d">9. Lisp</a></li>
+<li><a href="#orgb490e1b">10. Hoovy</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgbf38161" class="outline-2">
-<h2 id="orgbf38161"><span class="section-number-2">1</span> Startup</h2>
+<div id="outline-container-org4ad93da" class="outline-2">
+<h2 id="org4ad93da"><span class="section-number-2">1</span> Startup</h2>
 <div class="outline-text-2" id="text-1">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(add-to-list 'load-path <span style="color: #99d790;">"~/.emacs.d/site-lisp"</span>)
@@ -276,8 +277,8 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orgc7e7322" class="outline-2">
-<h2 id="orgc7e7322"><span class="section-number-2">2</span> Packages</h2>
+<div id="outline-container-orgcfcda5f" class="outline-2">
+<h2 id="orgcfcda5f"><span class="section-number-2">2</span> Packages</h2>
 <div class="outline-text-2" id="text-2">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(add-to-list 'package-archives '(<span style="color: #99d790;">"melpa"</span> . <span style="color: #99d790;">"http://melpa.org/packages/"</span>))
@@ -293,8 +294,8 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orge7736af" class="outline-2">
-<h2 id="orge7736af"><span class="section-number-2">3</span> Display</h2>
+<div id="outline-container-orgff89365" class="outline-2">
+<h2 id="orgff89365"><span class="section-number-2">3</span> Display</h2>
 <div class="outline-text-2" id="text-3">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(menu-bar-mode nil)
@@ -312,8 +313,8 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orgf4c5424" class="outline-2">
-<h2 id="orgf4c5424"><span class="section-number-2">4</span> Workspace</h2>
+<div id="outline-container-org483aba2" class="outline-2">
+<h2 id="org483aba2"><span class="section-number-2">4</span> Workspace</h2>
 <div class="outline-text-2" id="text-4">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(set-language-environment <span style="color: #99d790;">"UTF-8"</span>)
@@ -368,8 +369,8 @@ for the JavaScript code in this tag.
 </div>
 
 
-<div id="outline-container-org65c89e6" class="outline-2">
-<h2 id="org65c89e6"><span class="section-number-2">5</span> Communications</h2>
+<div id="outline-container-org1cbdc71" class="outline-2">
+<h2 id="org1cbdc71"><span class="section-number-2">5</span> Communications</h2>
 <div class="outline-text-2" id="text-5">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">
@@ -399,8 +400,8 @@ for the JavaScript code in this tag.
 </div>
 
 
-<div id="outline-container-orgba4e074" class="outline-2">
-<h2 id="orgba4e074"><span class="section-number-2">6</span> Objective CAML</h2>
+<div id="outline-container-orgf4bc153" class="outline-2">
+<h2 id="orgf4bc153"><span class="section-number-2">6</span> Objective CAML</h2>
 <div class="outline-text-2" id="text-6">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="color: #070;">;; </span><span style="color: #070;">## added by OPAM user-setup for emacs / base ## 56ab50dc8996d2bb95e7856a6eddb17b ## you can edit, but keep this line</span>
@@ -411,8 +412,8 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org694a3eb" class="outline-2">
-<h2 id="org694a3eb"><span class="section-number-2">7</span> Prolog</h2>
+<div id="outline-container-orgfd0b3df" class="outline-2">
+<h2 id="orgfd0b3df"><span class="section-number-2">7</span> Prolog</h2>
 <div class="outline-text-2" id="text-7">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="color: #70b4fa;">require</span> '<span style="color: #99d790;">ediprolog</span>)
@@ -423,8 +424,8 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org2802150" class="outline-2">
-<h2 id="org2802150"><span class="section-number-2">8</span> Erlang</h2>
+<div id="outline-container-orge46e47d" class="outline-2">
+<h2 id="orge46e47d"><span class="section-number-2">8</span> Erlang</h2>
 <div class="outline-text-2" id="text-8">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(add-to-list 'load-path <span style="color: #99d790;">"/usr/lib/erlang/tools-2.10.1/emacs"</span>)
@@ -470,8 +471,8 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orgd901d2f" class="outline-2">
-<h2 id="orgd901d2f"><span class="section-number-2">9</span> Lisp</h2>
+<div id="outline-container-org59df36d" class="outline-2">
+<h2 id="org59df36d"><span class="section-number-2">9</span> Lisp</h2>
 <div class="outline-text-2" id="text-9">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="color: #70b4fa;">require</span> '<span style="color: #99d790;">cl</span>)
@@ -574,8 +575,8 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org1ac0d17" class="outline-2">
-<h2 id="org1ac0d17"><span class="section-number-2">10</span> Hoovy</h2>
+<div id="outline-container-orgb490e1b" class="outline-2">
+<h2 id="orgb490e1b"><span class="section-number-2">10</span> Hoovy</h2>
 <div class="outline-text-2" id="text-10">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(org-babel-load-file (concat <span style="color: #99d790;">"~/hoovy/hoovy.org"</span>)) <span style="color: #070;">;; </span><span style="color: #070;">FIXME: use hoovy-root</span>
@@ -586,7 +587,7 @@ for the JavaScript code in this tag.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Lyndon Tremblay</p>
-<p class="date">Created: 2017-12-23 Sat 00:35</p>
+<p class="date">Created: 2017-12-23 Sat 01:50</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
