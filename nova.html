@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-10-02 Mon 12:50 -->
+<!-- 2017-12-23 Sat 00:35 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Nova Computer (NVC)</title>
+<title>Nova Project</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="Lyndon Tremblay" />
 <style type="text/css">
@@ -68,6 +68,7 @@
   pre.src-fortran:before { content: 'Fortran'; }
   pre.src-gnuplot:before { content: 'gnuplot'; }
   pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
   pre.src-java:before { content: 'Java'; }
   pre.src-js:before { content: 'Javascript'; }
   pre.src-latex:before { content: 'LaTeX'; }
@@ -228,39 +229,87 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">Nova Computer (NVC)</h1>
+<h1 class="title">Nova Project</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org3795586">1. Terminal</a>
+<li><a href="#org5160ab4">1. Nova Computer (NVC)</a>
 <ul>
-<li><a href="#org19abc16">1.1. Display</a></li>
-<li><a href="#org8eab4b3">1.2. parts</a></li>
-<li><a href="#orgc57c9ea">1.3. Characters</a></li>
-<li><a href="#org421ca05">1.4. Processor</a></li>
-<li><a href="#orgbafdc0e">1.5. Input</a></li>
+<li><a href="#org3795586">1.1. Terminal</a>
+<ul>
+<li><a href="#org19abc16">1.1.1. Display</a></li>
+<li><a href="#orgc026ed4">1.1.2. Parts</a></li>
+<li><a href="#orgc57c9ea">1.1.3. Characters</a></li>
+<li><a href="#org421ca05">1.1.4. Processor</a></li>
+<li><a href="#orgbafdc0e">1.1.5. Input</a></li>
 </ul>
 </li>
-<li><a href="#org6a6fc8f">2. Session</a>
-<ul>
-<li><a href="#org16f0cf1">2.1. Memory Tree</a></li>
+<li><a href="#orgaff6b84">1.2. Programming</a></li>
+<li><a href="#org6a6fc8f">1.3. Session</a></li>
+<li><a href="#org00d97a2">1.4. Memory Tree Filesystem</a></li>
+<li><a href="#org333267d">1.5. Network</a></li>
+<li><a href="#org81e6c36">1.6. Drawing</a></li>
 </ul>
 </li>
-<li><a href="#org032a741">3. Filesystem</a></li>
-<li><a href="#org333267d">4. Network</a></li>
-<li><a href="#org81e6c36">5. Drawing</a></li>
-<li><a href="#orgd6f3486">6. Polygons</a></li>
+<li><a href="#org5e08da4">2. The Pilot</a>
+<ul>
+<li><a href="#orgbfd9274">2.1. Weapons</a></li>
+<li><a href="#orga82ddd2">2.2. Actions</a></li>
+<li><a href="#org127716d">2.3. the novaphone</a></li>
+<li><a href="#orgca30a23">2.4. the lab</a></li>
+</ul>
+</li>
+<li><a href="#org5483231">3. Game World</a>
+<ul>
+<li><a href="#orgb6bed2e">3.1. STORY</a></li>
+<li><a href="#org677f3b5">3.2. GAMEPLAY</a></li>
+<li><a href="#org40e0be9">3.3. ENVIRONMENT</a></li>
+<li><a href="#org53d5252">3.4. Landmarks</a></li>
+<li><a href="#orgb9ae66d">3.5. ENEMIES</a></li>
+<li><a href="#orgfa9434d">3.6. the planets</a>
+<ul>
+<li><a href="#org5777c0b">3.6.1. 1 Rupa, the cave planet (yellow, earth, form/matter, mouth?)</a></li>
+<li><a href="#org85384b1">3.6.2. 2 Vedana, the forest planet (green, wood, contact/feeling/sensation, eyes)</a></li>
+<li><a href="#org603b868">3.6.3. 3 Sanna, the machine planet (white, metal, perception/discrimination/cognition, nose)</a></li>
+<li><a href="#orgadc49e1">3.6.4. 4 Sankhara, the ice planet (blue, water, will/volition, ears)</a></li>
+<li><a href="#org91f81b1">3.6.5. 5 Vinnana, the desert volcano planet (red, fire, consciousness, tongue?)</a></li>
+</ul>
+</li>
+<li><a href="#org49532d8">3.7. the screens</a>
+<ul>
+<li><a href="#org67a2f07">3.7.1. main screen</a></li>
+<li><a href="#org5e5f7ec">3.7.2. map screen</a></li>
+<li><a href="#orgd141361">3.7.3. item screen</a></li>
+<li><a href="#orgc28fc37">3.7.4. equipment screen</a></li>
+<li><a href="#org6e83e2d">3.7.5. status screen</a></li>
+</ul>
+</li>
+<li><a href="#org3a4b0aa">3.8. ITEMS</a>
+<ul>
+<li><a href="#org304eded">3.8.1. weapons</a></li>
+<li><a href="#org820f459">3.8.2. skills</a></li>
+</ul>
+</li>
+<li><a href="#org68d9659">3.9. Dungeon Rooms</a></li>
+<li><a href="#org909a238">3.10. World</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org3795586" class="outline-2">
-<h2 id="org3795586"><span class="section-number-2">1</span> Terminal</h2>
+<div id="outline-container-org5160ab4" class="outline-2">
+<h2 id="org5160ab4"><span class="section-number-2">1</span> Nova Computer (NVC)</h2>
 <div class="outline-text-2" id="text-1">
-</div><div id="outline-container-org19abc16" class="outline-3">
-<h3 id="org19abc16"><span class="section-number-3">1.1</span> Display</h3>
+</div>
+<div id="outline-container-org3795586" class="outline-3">
+<h3 id="org3795586"><span class="section-number-3">1.1</span> Terminal</h3>
 <div class="outline-text-3" id="text-1-1">
+</div>
+<div id="outline-container-org19abc16" class="outline-4">
+<h4 id="org19abc16"><span class="section-number-4">1.1.1</span> Display</h4>
+<div class="outline-text-4" id="text-1-1-1">
 <p>
 512x512 1bit (262144 pixels, 32kb)
 </p>
@@ -269,23 +318,28 @@ for the JavaScript code in this tag.
 0,0 is lower left
 511,511 is top right
 </p>
+
+<p>
+8x8 tiles, 64x64 max tiles (or 8x16??)
+</p>
 </div>
 </div>
 
-<div id="outline-container-org8eab4b3" class="outline-3">
-<h3 id="org8eab4b3"><span class="section-number-3">1.2</span> parts</h3>
-<div class="outline-text-3" id="text-1-2">
+
+<div id="outline-container-orgc026ed4" class="outline-4">
+<h4 id="orgc026ed4"><span class="section-number-4">1.1.2</span> Parts</h4>
+<div class="outline-text-4" id="text-1-1-2">
 <p>
 sound &gt; sample
-                   &gt; function
+				   &gt; function
 image &gt; pixel
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgc57c9ea" class="outline-3">
-<h3 id="orgc57c9ea"><span class="section-number-3">1.3</span> Characters</h3>
-<div class="outline-text-3" id="text-1-3">
+<div id="outline-container-orgc57c9ea" class="outline-4">
+<h4 id="orgc57c9ea"><span class="section-number-4">1.1.3</span> Characters</h4>
+<div class="outline-text-4" id="text-1-1-3">
 <p>
 8x16 8bit (1024 bytes)
 </p>
@@ -299,69 +353,497 @@ or fine coords:
 </div>
 </div>
 
-<div id="outline-container-org421ca05" class="outline-3">
-<h3 id="org421ca05"><span class="section-number-3">1.4</span> Processor</h3>
-<div class="outline-text-3" id="text-1-4">
+<div id="outline-container-org421ca05" class="outline-4">
+<h4 id="org421ca05"><span class="section-number-4">1.1.4</span> Processor</h4>
+<div class="outline-text-4" id="text-1-1-4">
 <p>
 locally executes instruction codes. (lisp vm)
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgbafdc0e" class="outline-3">
-<h3 id="orgbafdc0e"><span class="section-number-3">1.5</span> Input</h3>
+<div id="outline-container-orgbafdc0e" class="outline-4">
+<h4 id="orgbafdc0e"><span class="section-number-4">1.1.5</span> Input</h4>
+<div class="outline-text-4" id="text-1-1-5">
+<p>
+text stream I/O.
+</p>
+</div>
 </div>
 </div>
 
-
-<div id="outline-container-org6a6fc8f" class="outline-2">
-<h2 id="org6a6fc8f"><span class="section-number-2">2</span> Session</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-orgaff6b84" class="outline-3">
+<h3 id="orgaff6b84"><span class="section-number-3">1.2</span> Programming</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>using cube tiles, or full geometry in parts but connecting doorways ?</li>
+<li>encryption or some smarts to prevent game progress hacking</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6a6fc8f" class="outline-3">
+<h3 id="org6a6fc8f"><span class="section-number-3">1.3</span> Session</h3>
+<div class="outline-text-3" id="text-1-3">
 <p>
 persistent user sessions
 </p>
 </div>
-<div id="outline-container-org16f0cf1" class="outline-3">
-<h3 id="org16f0cf1"><span class="section-number-3">2.1</span> Memory Tree</h3>
+</div>
+<div id="outline-container-org00d97a2" class="outline-3">
+<h3 id="org00d97a2"><span class="section-number-3">1.4</span> Memory Tree Filesystem</h3>
+<div class="outline-text-3" id="text-1-4">
+<ul class="org-ul">
+<li>shared symbols organized as a list of lists.</li>
+<li>symbols can be remote pointers (message passing).</li>
+<li>namespaces (branches) can be associated to and resolved from physical or virtual places.</li>
+<li>real NVC files are virtual. but virtual NVC files are real files&#x2026;</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org333267d" class="outline-3">
+<h3 id="org333267d"><span class="section-number-3">1.5</span> Network</h3>
+<div class="outline-text-3" id="text-1-5">
+<ul class="org-ul">
+<li>clients use HTTP, JSON API, or Swank.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org81e6c36" class="outline-3">
+<h3 id="org81e6c36"><span class="section-number-3">1.6</span> Drawing</h3>
+<div class="outline-text-3" id="text-1-6">
+<ul class="org-ul">
+<li>turtle</li>
+<li>draw, lift pen, stroke, path, bitops, et</li>
+<li>polygon windings?</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5e08da4" class="outline-2">
+<h2 id="org5e08da4"><span class="section-number-2">2</span> The Pilot</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>hero is a wandering alchemist.</li>
+<li>he has a ship.</li>
+<li>he is known around the galaxy for helping others.</li>
+<li>his dressing is in tattered robes</li>
+<li>he is always happy, even at very scary and threatening large bosses to hurt him</li>
+<li>he has great knowledge of the 5 elements</li>
+<li>he also has great knowledge of the two opposing forces, light and dark. neither are good or bad.</li>
+<li>he is a retired bounty hunter a long time ago,</li>
+<li>now is in a life of peaceful living and music and helping
+those who he encounters in his passive/reactive travels</li>
+</ul>
+</div>
+<div id="outline-container-orgbfd9274" class="outline-3">
+<h3 id="orgbfd9274"><span class="section-number-3">2.1</span> Weapons</h3>
 <div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>starting gun is default pistol-like single shot arm cannon</li>
+<li>mid way through game upgrade is rapid fire machine-style shooting with shells.
+this weapon is rapid but overheats.</li>
+<li>green laser that might bounce one time. toothpaste green, bright and
+spilly and splashy and with travel. might push a little, samus and/or enemies.</li>
+<li>actually a railgun, it shoots for 1 second and has 1 second delay. pushback for
+samus prevents her from movement. so it is a precise weapon like sniper.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga82ddd2" class="outline-3">
+<h3 id="orga82ddd2"><span class="section-number-3">2.2</span> Actions</h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li>he throws bombs.</li>
+<li>his potions come in vials to throw or to use on himself</li>
+<li>he collects item in the bag he carries</li>
+<li>E-tank</li>
+<li>missile tank</li>
+<li>electric whip/grapple ?</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org127716d" class="outline-3">
+<h3 id="org127716d"><span class="section-number-3">2.3</span> the novaphone</h3>
+<div class="outline-text-3" id="text-2-3">
 <p>
-shared symbols organized as a list of lists.
-symbols can be remote pointers (message passing).
-namespaces (branches) can be associated to and resolved from physical or virtual places.
+his grand and complicated magical (blessed) organ can travel in the galaxy.
+it is made of junk parts from things given to him. each part has sentimental value. (karma)
+he lands it on a planet , and this is head quarters. he can return here with parts he found,
+   new items to mix in the lab, save and heal.
+there is a lot of traveling back to novaphone, many items need to be analyzed
+nova has everything he needs to live a long life of peace inside novaphone.
+how it was created, revealed in pieces during game, of nova's past:
+   during a great mission, partners and friends he thought he trusted has turned on him
+   so easily. he was left with nothing and stranded in a barren junk planet. he started to build a
+   home here, with junk parts. he was later able to make it travel on land, where he found other
+   people. he was doing services for the good and not for the bad, helping others &#x2013; in this way
+   his home became greater exponentially and was able to travel in space soon. when he was
+   first abandoned in the barren wasteland area, he spent 3 years and 3 months in solitude.
+</p>
+</div>
+</div>
+<div id="outline-container-orgca30a23" class="outline-3">
+<h3 id="orgca30a23"><span class="section-number-3">2.4</span> the lab</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+in the ship there is a lab for making various potions, concotions both bad and good
+here many items are made, like fire attack bombs, regular bombs, even bullets.
+it also works with metal and can make some special parts for upgrades and progress.
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org032a741" class="outline-2">
-<h2 id="org032a741"><span class="section-number-2">3</span> Filesystem</h2>
-</div>
-<div id="outline-container-org333267d" class="outline-2">
-<h2 id="org333267d"><span class="section-number-2">4</span> Network</h2>
-<div class="outline-text-2" id="text-4">
+<div id="outline-container-org5483231" class="outline-2">
+<h2 id="org5483231"><span class="section-number-2">3</span> Game World</h2>
+<div class="outline-text-2" id="text-3">
 <p>
-clients use HTTP.
+Dharma in a game
+</p>
+</div>
+<div id="outline-container-orgb6bed2e" class="outline-3">
+<h3 id="orgb6bed2e"><span class="section-number-3">3.1</span> STORY</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+he travels alone in space until the federation sends him a message but they haven't met
+  until his help is requested by them. they know of him from his mercenary name, The Whistler.
+  they had a hard time to track him down and find him. nova notices the message in a public place
+  like a Wanted sign, he decides to set up a safe meeting from a distance to see. never does he
+  visit them personally until the relationship between nova and the federation are more secure,
+  where both sides have what the other wants; in such a way that either party can abort safely.
+  at first they are both afraid of each other; nova doesn't want to get caught or somehow harmed,
+  and the federation does not want to be destroyed knowing of nova's past life and reputation.
+he accepts the federation's dire request because he thinks even from his painful and evil past,
+   that he can do something right by having an idea that he has a purpose and this is it.
+   in the end he realises his chosen peaceful life was the real purpose, where he had everything.
+</p>
+
+<p>
+at first they are good guys with no harm. in the end, they end up being the bad ones, and they
+themselves did not even know it. so through the adventure, nova using his morals finds more and
+more that the federation is indeed the true enemy, not the harmless creatures he is sent to planets
+to either:
+</p>
+<ul class="org-ul">
+<li>eradicate those that seem hostile</li>
+<li>collect for study those that seem harmless/helpful</li>
+<li>or to change and modify and interrupt those who are neither harmful or helpful.</li>
+</ul>
+<p>
+so in the end nova finds out the federation is just scared of the 5 planets because they don't
+understand them. nova along the way helps them to get rid of the real enemy, inside themselves
+</p>
+
+<ul class="org-ul">
+<li>takes place on galaxy federation planet or ship run by robots and machine</li>
+</ul>
+<p>
+? hero can disengage her suit to zero, for certain areas or environments ?
+   then, when engaged or spotted by robot or camera detection, robots come and
+   samus must change into suit&#x2026; will give a great sense of human fragility.
+</p>
+<ul class="org-ul">
+<li>zen chozo masters</li>
+<li>story telling but not like fusion, instead like castlevania, but computers</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org677f3b5" class="outline-3">
+<h3 id="org677f3b5"><span class="section-number-3">3.2</span> GAMEPLAY</h3>
+<div class="outline-text-3" id="text-3-2">
+<ul class="org-ul">
+<li>three skills: beginner, normal, advanced.</li>
+<li>melee? smash brothers maybe auto, charging into them, kicking them</li>
+<li>mouse to aim.</li>
+<li>samus can point in 360 degrees but always facing toward camera.</li>
+</ul>
+<p>
+? can walk backwards, or lock aim to where samus can physically rotate ?
+</p>
+<ul class="org-ul">
+<li>option to use analog control stick.</li>
+<li>mouse buttons to change shot items</li>
+<li>buttons on keyboard to move left right, down is duck, up is jump</li>
+<li>button for fire (selected weapon/item) and bombs in morph</li>
+</ul>
+<p>
+? there are curving geometry for morph ball requiring acceleration/momentum ?
+</p>
+<ul class="org-ul">
+<li>gravity changes in some areas like mario galaxy</li>
+<li>screen can turn and rotate left and right, and zoom</li>
+<li>gravity weapons that attract samus to it because of the suit, gravity suit can
+overcome it</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org40e0be9" class="outline-3">
+<h3 id="org40e0be9"><span class="section-number-3">3.3</span> ENVIRONMENT</h3>
+<div class="outline-text-3" id="text-3-3">
+<ul class="org-ul">
+<li>space, tech, earthy, cyber</li>
+<li>gears and clockwork!</li>
+<li>the inner architecture of planets.</li>
+<li>geometry able to become destroyed in some areas.
+it should be obvious to the player.</li>
+<li>powerfully atmospheric lighting, like abuse mixed with doom3.</li>
+<li>lots of engines and pipes and gears and machine and pits and mystery spots.</li>
+<li>but not too dark.</li>
+<li>neat doors</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org53d5252" class="outline-3">
+<h3 id="org53d5252"><span class="section-number-3">3.4</span> Landmarks</h3>
+<div class="outline-text-3" id="text-3-4">
+<ul class="org-ul">
+<li>save station</li>
+<li>shops</li>
+<li>populated areas</li>
+<li>unexplored/dangerous areas</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb9ae66d" class="outline-3">
+<h3 id="orgb9ae66d"><span class="section-number-3">3.5</span> ENEMIES</h3>
+<div class="outline-text-3" id="text-3-5">
+<ul class="org-ul">
+<li>all are robots.</li>
+<li>bland colors such as grey, greyish blue, greyish green, brown, etc,
+are defeated with any weapon.</li>
+<li>strong colors such as green, red, use certain aquired weapons to defeat</li>
+<li>armor plays similar role with the suit of samus</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgfa9434d" class="outline-3">
+<h3 id="orgfa9434d"><span class="section-number-3">3.6</span> the planets</h3>
+<div class="outline-text-3" id="text-3-6">
+<p>
+nova is requested by the federation to be the only one who doesn't fear. and he is known
+for his strong powers that they can only 50% understand with science, enough that they
+are not scared. so he is sent to missions on the planets to help the federation with their goals.
+</p>
+
+<p>
+the future city is the hub planet. it is the start and the end of the journey,
+the center of all 5 main planets, it is floating in space. this is where the federation and
+the population are. in the beginning it is a city, but progressing in the adventure it ends up
+to be a military fortress. nova observes the changes and helps with many of them through
+his missions on the planets.
+</p>
+</div>
+
+<div id="outline-container-org5777c0b" class="outline-4">
+<h4 id="org5777c0b"><span class="section-number-4">3.6.1</span> 1 Rupa, the cave planet (yellow, earth, form/matter, mouth?)</h4>
+<div class="outline-text-4" id="text-3-6-1">
+<p>
+is where wood bombs are useful.
+there are insect creatures here.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org81e6c36" class="outline-2">
-<h2 id="org81e6c36"><span class="section-number-2">5</span> Drawing</h2>
-<div class="outline-text-2" id="text-5">
+<div id="outline-container-org85384b1" class="outline-4">
+<h4 id="org85384b1"><span class="section-number-4">3.6.2</span> 2 Vedana, the forest planet (green, wood, contact/feeling/sensation, eyes)</h4>
+<div class="outline-text-4" id="text-3-6-2">
 <p>
-turtle
-draw, lift pen, stroke, path, bitops, etc.
+is where metal bombs are useful.
+there are plant creatures here.
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgd6f3486" class="outline-2">
-<h2 id="orgd6f3486"><span class="section-number-2">6</span> Polygons</h2>
+<div id="outline-container-org603b868" class="outline-4">
+<h4 id="org603b868"><span class="section-number-4">3.6.3</span> 3 Sanna, the machine planet (white, metal, perception/discrimination/cognition, nose)</h4>
+<div class="outline-text-4" id="text-3-6-3">
+<p>
+is where fire bombs are useful.
+there are cold machines here.
+</p>
+
+<p>
+swap 3 &amp; 4?
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgadc49e1" class="outline-4">
+<h4 id="orgadc49e1"><span class="section-number-4">3.6.4</span> 4 Sankhara, the ice planet (blue, water, will/volition, ears)</h4>
+<div class="outline-text-4" id="text-3-6-4">
+<p>
+is where earth bombs are useful.
+there are mysterious forces of nature here.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org91f81b1" class="outline-4">
+<h4 id="org91f81b1"><span class="section-number-4">3.6.5</span> 5 Vinnana, the desert volcano planet (red, fire, consciousness, tongue?)</h4>
+<div class="outline-text-4" id="text-3-6-5">
+<p>
+is where the water bombs are useful.
+there are hot lizards here.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org49532d8" class="outline-3">
+<h3 id="org49532d8"><span class="section-number-3">3.7</span> the screens</h3>
+<div class="outline-text-3" id="text-3-7">
+</div>
+<div id="outline-container-org67a2f07" class="outline-4">
+<h4 id="org67a2f07"><span class="section-number-4">3.7.1</span> main screen</h4>
+<div class="outline-text-4" id="text-3-7-1">
+<p>
+four buttons: attack, jump, special, defend.
+there is a map on the top right.
+</p>
+</div>
+</div>
+<div id="outline-container-org5e5f7ec" class="outline-4">
+<h4 id="org5e5f7ec"><span class="section-number-4">3.7.2</span> map screen</h4>
+<div class="outline-text-4" id="text-3-7-2">
+<p>
+shows current position, save points, boss rooms.
+</p>
+</div>
+</div>
+<div id="outline-container-orgd141361" class="outline-4">
+<h4 id="orgd141361"><span class="section-number-4">3.7.3</span> item screen</h4>
+<div class="outline-text-4" id="text-3-7-3">
+<p>
+shows your items.
+</p>
+</div>
+</div>
+<div id="outline-container-orgc28fc37" class="outline-4">
+<h4 id="orgc28fc37"><span class="section-number-4">3.7.4</span> equipment screen</h4>
+<div class="outline-text-4" id="text-3-7-4">
+<p>
+can equip:
+</p>
+<ul class="org-ul">
+<li>body</li>
+<li>head</li>
+<li>feet</li>
+<li>accessory 1</li>
+<li>accessory 2</li>
+<li>weapon</li>
+<li>skill</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6e83e2d" class="outline-4">
+<h4 id="org6e83e2d"><span class="section-number-4">3.7.5</span> status screen</h4>
+<div class="outline-text-4" id="text-3-7-5">
+<p>
+xp, gold, time, monster count.
+stats are distributed manually among these:
+</p>
+
+<p>
+DEX (attack, defense)
+AGI (dodge, luck)
+CON (hp, mp)
+WIS (Matk, Mdef)
+</p>
+
+<p>
+both equipment and manual stats affect these:
+Attack, Defense, Dodge, luck, Mdef, Matk, health points, magic points, crit.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org3a4b0aa" class="outline-3">
+<h3 id="org3a4b0aa"><span class="section-number-3">3.8</span> ITEMS</h3>
+<div class="outline-text-3" id="text-3-8">
+<p>
+each item has a weight.
+</p>
+</div>
+<div id="outline-container-org304eded" class="outline-4">
+<h4 id="org304eded"><span class="section-number-4">3.8.1</span> weapons</h4>
+<div class="outline-text-4" id="text-3-8-1">
+<p>
+two-handed and one-handed ?
+  only sheilds for one handed or no handed ?
+</p>
+
+<p>
+atk speed, atk power
+</p>
+</div>
+</div>
+
+<div id="outline-container-org820f459" class="outline-4">
+<h4 id="org820f459"><span class="section-number-4">3.8.2</span> skills</h4>
+<div class="outline-text-4" id="text-3-8-2">
+<p>
+fire, ice, heal, etc.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org68d9659" class="outline-3">
+<h3 id="org68d9659"><span class="section-number-3">3.9</span> Dungeon Rooms</h3>
+<div class="outline-text-3" id="text-3-9">
+<p>
+dungeon entrance.
+save room.
+boss room.
+empty room.
+monster room.
+secret room.
+trap room.
+treasure room.
+</p>
+</div>
+</div>
+<div id="outline-container-org909a238" class="outline-3">
+<h3 id="org909a238"><span class="section-number-3">3.10</span> World</h3>
+<div class="outline-text-3" id="text-3-10">
+<p>
+the character and the world are inseperable.
+</p>
+
+<p>
+the rooms are generated as soon as they are entered, then saved along
+with the game progress. so in this way, the world is endless but remains
+unique. there are themed rooms too and so it forms a heirarchy, not just
+of rooms but of themed areas. the map is a grid by screen size. 4:3.
+</p>
+
+<p>
+only if there are teleports: ?
+the whole dungeon is saved, so monsters do not come back. and breakable
+things stay broken if they were broken.
+</p>
+
+<p>
+monsters actually respond after 1 minute or so after being killed.
+</p>
+
+<p>
+there will need to be logic so that if a player needs an item to continue
+from getting stuck, they can somehow get it. say if they are surrounded
+with no health, by rooms that require health to pass, and another room
+that needs a certain item to cross lava (or something), then &#x2026;
+</p>
+</div>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Lyndon Tremblay</p>
-<p class="date">Created: 2017-10-02 Mon 12:50</p>
+<p class="date">Created: 2017-12-23 Sat 00:35</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

@@ -6,7 +6,7 @@
 <!-- 2017-12-23 Sat 00:35 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Gamelike</title>
+<title>Hoovy Notes</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="Lyndon Tremblay" />
 <style type="text/css">
@@ -229,208 +229,18 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">Gamelike</h1>
+<h1 class="title">Hoovy Notes</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org4ebd592">1. Implementation</a></li>
-<li><a href="#org3d308b5">2. World</a></li>
-<li><a href="#org64ce587">3. Character</a></li>
-<li><a href="#org86e4875">4. Classes</a>
-<ul>
-<li><a href="#org1f5794f">4.1. Human</a></li>
-<li><a href="#org60497e1">4.2. Machine</a></li>
-<li><a href="#org340ea37">4.3. Robot</a></li>
-<li><a href="#orgad8beb7">4.4. Junk</a></li>
-<li><a href="#org59ad885">4.5. Food</a></li>
-</ul>
-</li>
-<li><a href="#org756945f">5. Jobs</a>
-<ul>
-<li><a href="#orgf33c3d0">5.1. Chef</a></li>
-<li><a href="#orgd012de4">5.2. Craftsman</a></li>
-<li><a href="#orgc2c1b01">5.3. Soldier</a></li>
-<li><a href="#org1bce0c8">5.4. Monk</a></li>
-<li><a href="#org15daa5a">5.5. Hacker</a></li>
-<li><a href="#org7335203">5.6. Artist ?</a></li>
-</ul>
-</li>
-<li><a href="#org47683d6">6. Styles</a></li>
-<li><a href="#org29d4810">7. Items</a>
-<ul>
-<li><a href="#org034d16c">7.1. Weapons</a></li>
-<li><a href="#org3afafe8">7.2. Armor</a></li>
-<li><a href="#org04d06b3">7.3. Accessories</a></li>
-<li><a href="#org36a0d38">7.4. Collectables</a></li>
-<li><a href="#orgc86fe3f">7.5. Consumables</a></li>
-</ul>
-</li>
-<li><a href="#org40f9cec">8. Rooms/Arenas</a></li>
-<li><a href="#org81c2882">9. Maps/Zones</a>
-<ul>
-<li><a href="#orgec0ae98">9.1. Snow and Ice (water, mem)</a></li>
-<li><a href="#org99d86a2">9.2. Underground Caves (earth, aleph)</a></li>
-<li><a href="#org51bab20">9.3. Floating Continents (sky, shin)</a></li>
-</ul>
-</li>
-<li><a href="#org1111e0c">10. Trading/Market</a></li>
-<li><a href="#org58f28c9">11. Parties/Quests</a></li>
+<li><a href="#org9e7b61b">1. 000</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org4ebd592" class="outline-2">
-<h2 id="org4ebd592"><span class="section-number-2">1</span> Implementation</h2>
-<div class="outline-text-2" id="text-1">
-<ul class="org-ul">
-<li>uses your filesystem for inventory storage. big files, small files&#x2026;
-for eg: potion = 1024kb</li>
-</ul>
-</div>
-</div>
-
-
-<div id="outline-container-org3d308b5" class="outline-2">
-<h2 id="org3d308b5"><span class="section-number-2">2</span> World</h2>
-<div class="outline-text-2" id="text-2">
-<ul class="org-ul">
-<li>In Space! Not Outer space!</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org64ce587" class="outline-2">
-<h2 id="org64ce587"><span class="section-number-2">3</span> Character</h2>
-<div class="outline-text-2" id="text-3">
-<ul class="org-ul">
-<li>generated with random levels and status and items and history.</li>
-<li>can 'move' the mind (actor) into another body (action).</li>
-<li>can move into items, objects, pixels.</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org86e4875" class="outline-2">
-<h2 id="org86e4875"><span class="section-number-2">4</span> Classes</h2>
-<div class="outline-text-2" id="text-4">
-</div>
-<div id="outline-container-org1f5794f" class="outline-3">
-<h3 id="org1f5794f"><span class="section-number-3">4.1</span> Human</h3>
-</div>
-<div id="outline-container-org60497e1" class="outline-3">
-<h3 id="org60497e1"><span class="section-number-3">4.2</span> Machine</h3>
-</div>
-<div id="outline-container-org340ea37" class="outline-3">
-<h3 id="org340ea37"><span class="section-number-3">4.3</span> Robot</h3>
-</div>
-<div id="outline-container-orgad8beb7" class="outline-3">
-<h3 id="orgad8beb7"><span class="section-number-3">4.4</span> Junk</h3>
-</div>
-<div id="outline-container-org59ad885" class="outline-3">
-<h3 id="org59ad885"><span class="section-number-3">4.5</span> Food</h3>
-</div>
-</div>
-<div id="outline-container-org756945f" class="outline-2">
-<h2 id="org756945f"><span class="section-number-2">5</span> Jobs</h2>
-<div class="outline-text-2" id="text-5">
-</div>
-<div id="outline-container-orgf33c3d0" class="outline-3">
-<h3 id="orgf33c3d0"><span class="section-number-3">5.1</span> Chef</h3>
-</div>
-<div id="outline-container-orgd012de4" class="outline-3">
-<h3 id="orgd012de4"><span class="section-number-3">5.2</span> Craftsman</h3>
-</div>
-<div id="outline-container-orgc2c1b01" class="outline-3">
-<h3 id="orgc2c1b01"><span class="section-number-3">5.3</span> Soldier</h3>
-</div>
-<div id="outline-container-org1bce0c8" class="outline-3">
-<h3 id="org1bce0c8"><span class="section-number-3">5.4</span> Monk</h3>
-</div>
-<div id="outline-container-org15daa5a" class="outline-3">
-<h3 id="org15daa5a"><span class="section-number-3">5.5</span> Hacker</h3>
-</div>
-<div id="outline-container-org7335203" class="outline-3">
-<h3 id="org7335203"><span class="section-number-3">5.6</span> Artist ?</h3>
-</div>
-</div>
-<div id="outline-container-org47683d6" class="outline-2">
-<h2 id="org47683d6"><span class="section-number-2">6</span> Styles</h2>
-</div>
-<div id="outline-container-org29d4810" class="outline-2">
-<h2 id="org29d4810"><span class="section-number-2">7</span> Items</h2>
-<div class="outline-text-2" id="text-7">
-<ul class="org-ul">
-<li>can throw and equip all items.</li>
-</ul>
-</div>
-<div id="outline-container-org034d16c" class="outline-3">
-<h3 id="org034d16c"><span class="section-number-3">7.1</span> Weapons</h3>
-<div class="outline-text-3" id="text-7-1">
-<ul class="org-ul">
-<li>bow</li>
-<li>staff/spear/bo</li>
-<li>sword</li>
-<li>knife/dagger</li>
-<li>fists/knuckle</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org3afafe8" class="outline-3">
-<h3 id="org3afafe8"><span class="section-number-3">7.2</span> Armor</h3>
-</div>
-<div id="outline-container-org04d06b3" class="outline-3">
-<h3 id="org04d06b3"><span class="section-number-3">7.3</span> Accessories</h3>
-</div>
-<div id="outline-container-org36a0d38" class="outline-3">
-<h3 id="org36a0d38"><span class="section-number-3">7.4</span> Collectables</h3>
-<div class="outline-text-3" id="text-7-4">
-<ul class="org-ul">
-<li>figures</li>
-<li>cards</li>
-<li>Books</li>
-<li>discs</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-orgc86fe3f" class="outline-3">
-<h3 id="orgc86fe3f"><span class="section-number-3">7.5</span> Consumables</h3>
-<div class="outline-text-3" id="text-7-5">
-<ul class="org-ul">
-<li>Food (health, stamina, stats)</li>
-<li>Scrolls (skills, stats)</li>
-<li>Medicines/Potions/Drugs (drunk, speed, pain)</li>
-<li>Ammo (arrows, bullets, darts)</li>
-<li>Tools (oil, fuel, powders, etc)</li>
-</ul>
-</div>
-</div>
-</div>
-<div id="outline-container-org40f9cec" class="outline-2">
-<h2 id="org40f9cec"><span class="section-number-2">8</span> Rooms/Arenas</h2>
-</div>
-<div id="outline-container-org81c2882" class="outline-2">
-<h2 id="org81c2882"><span class="section-number-2">9</span> Maps/Zones</h2>
-<div class="outline-text-2" id="text-9">
-</div>
-<div id="outline-container-orgec0ae98" class="outline-3">
-<h3 id="orgec0ae98"><span class="section-number-3">9.1</span> Snow and Ice (water, mem)</h3>
-</div>
-<div id="outline-container-org99d86a2" class="outline-3">
-<h3 id="org99d86a2"><span class="section-number-3">9.2</span> Underground Caves (earth, aleph)</h3>
-</div>
-<div id="outline-container-org51bab20" class="outline-3">
-<h3 id="org51bab20"><span class="section-number-3">9.3</span> Floating Continents (sky, shin)</h3>
-</div>
-</div>
-<div id="outline-container-org1111e0c" class="outline-2">
-<h2 id="org1111e0c"><span class="section-number-2">10</span> Trading/Market</h2>
-<div class="outline-text-2" id="text-10">
-<ul class="org-ul">
-<li>real trading of unique items.</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org58f28c9" class="outline-2">
-<h2 id="org58f28c9"><span class="section-number-2">11</span> Parties/Quests</h2>
+<div id="outline-container-org9e7b61b" class="outline-2">
+<h2 id="org9e7b61b"><span class="section-number-2">1</span> 000</h2>
 </div>
 </div>
 <div id="postamble" class="status">

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-10-02 Mon 12:50 -->
+<!-- 2017-12-23 Sat 00:35 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>humasect emacs configuration</title>
@@ -68,6 +68,7 @@
   pre.src-fortran:before { content: 'Fortran'; }
   pre.src-gnuplot:before { content: 'gnuplot'; }
   pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
   pre.src-java:before { content: 'Java'; }
   pre.src-js:before { content: 'Javascript'; }
   pre.src-latex:before { content: 'LaTeX'; }
@@ -234,13 +235,15 @@ for the JavaScript code in this tag.
 <div id="text-table-of-contents">
 <ul>
 <li><a href="#orgbf38161">1. Startup</a></li>
-<li><a href="#orge7736af">2. Display</a></li>
-<li><a href="#orge6fe00d">3. Text Editing</a></li>
-<li><a href="#orgbf942e1">4. Org Mode</a></li>
+<li><a href="#orgc7e7322">2. Packages</a></li>
+<li><a href="#orge7736af">3. Display</a></li>
+<li><a href="#orgf4c5424">4. Workspace</a></li>
 <li><a href="#org65c89e6">5. Communications</a></li>
-<li><a href="#org694a3eb">6. Prolog</a></li>
-<li><a href="#org2802150">7. Erlang</a></li>
-<li><a href="#orgd901d2f">8. Lisp</a></li>
+<li><a href="#orgba4e074">6. Objective CAML</a></li>
+<li><a href="#org694a3eb">7. Prolog</a></li>
+<li><a href="#org2802150">8. Erlang</a></li>
+<li><a href="#orgd901d2f">9. Lisp</a></li>
+<li><a href="#org1ac0d17">10. Hoovy</a></li>
 </ul>
 </div>
 </div>
@@ -249,308 +252,333 @@ for the JavaScript code in this tag.
 <h2 id="orgbf38161"><span class="section-number-2">1</span> Startup</h2>
 <div class="outline-text-2" id="text-1">
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(add-to-list 'load-path "~/.emacs.d/site-lisp")
+<pre class="src src-emacs-lisp">(add-to-list 'load-path <span style="color: #99d790;">"~/.emacs.d/site-lisp"</span>)
 (server-start)
-(require 'exwm)
-(require 'exwm-config)
-;;(exwm-config-ido)
+(<span style="color: #70b4fa;">require</span> '<span style="color: #99d790;">exwm</span>)
+(<span style="color: #70b4fa;">require</span> '<span style="color: #99d790;">exwm-config</span>)
+<span style="color: #070;">;;</span><span style="color: #070;">(exwm-config-ido)</span>
 (exwm-config-default)
-(setq exwm-workspace-number 4)
+(exwm-enable-ido-workaround)
+(<span style="color: #70b4fa;">setq</span> exwm-workspace-number 4)
 
-(setq mouse-autoselect-window nil)   ;; can't use with exwm
-;;(setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil)))
-;;(setq mouse-wheel-progressive-speed nil)
+(<span style="color: #70b4fa;">setq</span> mouse-autoselect-window nil)   <span style="color: #070;">;; </span><span style="color: #070;">can't use with exwm</span>
+<span style="color: #070;">;;</span><span style="color: #070;">(setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil)))</span>
+<span style="color: #070;">;;</span><span style="color: #070;">(setq mouse-wheel-progressive-speed nil)</span>
 
-(add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
-;;(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/))"))
+(windmove-default-keybindings)
+<span style="color: #070;">;;</span><span style="color: #070;">(global-hl-line-mode 1)</span>
+<span style="color: #070;">;; </span><span style="color: #070;">(and</span>
+<span style="color: #070;">;;   </span><span style="color: #070;">(require 'centered-cursor-mode)</span>
+<span style="color: #070;">;;   </span><span style="color: #070;">(global-centered-cursor-mode 1))</span>
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc7e7322" class="outline-2">
+<h2 id="orgc7e7322"><span class="section-number-2">2</span> Packages</h2>
+<div class="outline-text-2" id="text-2">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(add-to-list 'package-archives '(<span style="color: #99d790;">"melpa"</span> . <span style="color: #99d790;">"http://melpa.org/packages/"</span>))
+(add-to-list 'package-archives '(<span style="color: #99d790;">"melpa-stable"</span> . <span style="color: #99d790;">"http://stable.melpa.org/packages/"</span>))
+<span style="color: #070;">;;</span><span style="color: #070;">(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/))"))</span>
+
+(<span style="color: #70b4fa;">defun</span> <span style="color: #fa4;">packages</span> ()
+  (<span style="color: #70b4fa;">interactive</span>)
+  (package-list-packages nil)
+  (hl-line-mode))
 </pre>
 </div>
 </div>
 </div>
 
 <div id="outline-container-orge7736af" class="outline-2">
-<h2 id="orge7736af"><span class="section-number-2">2</span> Display</h2>
-<div class="outline-text-2" id="text-2">
+<h2 id="orge7736af"><span class="section-number-2">3</span> Display</h2>
+<div class="outline-text-2" id="text-3">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(menu-bar-mode nil)
 (scroll-bar-mode nil)
 (tool-bar-mode nil)
-(setq visible-bell t)
+(<span style="color: #70b4fa;">setq</span> visible-bell t)
 (show-paren-mode t)
 
-(setq ibuffer-saved-filter-groups
-      '(("default"
-	 ("Emacs" (name . "^\\*"))
-	 ("Dired" (mode . dired-mode)))))
+(<span style="color: #70b4fa;">setq</span> ibuffer-saved-filter-groups
+      '((<span style="color: #99d790;">"default"</span>
+     (<span style="color: #99d790;">"Emacs"</span> (name . <span style="color: #99d790;">"^\\*"</span>))
+     (<span style="color: #99d790;">"Dired"</span> (mode . dired-mode)))))
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orge6fe00d" class="outline-2">
-<h2 id="orge6fe00d"><span class="section-number-2">3</span> Text Editing</h2>
-<div class="outline-text-2" id="text-3">
-<div class="org-src-container">
-<pre class="src src-emacs-lisp">(set-language-environment "UTF-8")
-(set-default-coding-systems 'utf-8)
-
-(require 'ido)
-(ido-mode t)
-
-(defun insert-date ()
-  (interactive)
-  (insert (format-time-string "%Y-%m-%d")))
-
-(org-display-inline-images t t)
-(setq org-edit-src-content-indentation 0
-      org-src-tab-acts-natively t
-      org-src-fontify-natively t
-      org-confirm-babel-evaluate nil
-      org-support-shift-select 'always)
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orgbf942e1" class="outline-2">
-<h2 id="orgbf942e1"><span class="section-number-2">4</span> Org Mode</h2>
+<div id="outline-container-orgf4c5424" class="outline-2">
+<h2 id="orgf4c5424"><span class="section-number-2">4</span> Workspace</h2>
 <div class="outline-text-2" id="text-4">
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(defconst hoovy-root "~/hoovy/")
-(defconst hoovy-www (concat hoovy-root "/www/"))
+<pre class="src src-emacs-lisp">(set-language-environment <span style="color: #99d790;">"UTF-8"</span>)
+(set-default-coding-systems 'utf-8)
 
-(setq org-default-notes-file (concat hoovy-root "/org/notes.org"))
-(define-key global-map (kbd "C-c c") 'org-capture)
+(<span style="color: #70b4fa;">setq</span> prettify-symbols-alist
+      '(
+        (<span style="color: #99d790;">"lambda"</span> . 955) <span style="color: #070;">; </span><span style="color: #070;">&#955;</span>
+        (<span style="color: #99d790;">"-&gt;"</span> . 8594)    <span style="color: #070;">; </span><span style="color: #070;">&#8594;</span>
+        (<span style="color: #99d790;">"=&gt;"</span> . 8658)    <span style="color: #070;">; </span><span style="color: #070;">&#8658;</span>
+        <span style="color: #070;">;;</span><span style="color: #070;">("map" . 8614)    ; &#8614;</span>
+        (<span style="color: #99d790;">"asdf"</span> . <span style="color: #99d790;">"b"</span>)
+        ))
 
-;; (defun hv-make-notes (&amp;optional name)
-;;   `(,(concat name "-notes")
-;;    :base-directory ,(concat hv-root "/" name "/org")
-;;    :base-extension "org"
-;;    :publishing-function org-publish-org-to-html
-;;    :publishing-directory ,(concat hv-www "/dev/" name)
-;;    :auto-sitemap t
-;;    :sitemap-title "/Site Map/"
-;;    :sitemap-alphabetically nil
-;;    :recursive t
-;;    :style-include-default t
-;;    :headline-levels 4
-;;    :auto-preamble t))
+<span style="color: #070;">;;</span><span style="color: #070;">(global-prettify-symbols-mode 1)</span>
 
-;; (defun hv-make-static (&amp;optional name)
-;;   `(,(concat name "-static")
-;;     :base-directory ,(concat hv-root "/" name "/org")
-;;     :base-extension "css\\|js\\|png\\|gif\\|pdf\\|mp3\\|ogg\\|svg"
-;;     :publishing-function org-publish-attachment
-;;     :publishing-directory ,(concat hv-www "/dev/" name)
-;;     :recursive t))
+(<span style="color: #70b4fa;">require</span> '<span style="color: #99d790;">ido</span>)
+(ido-mode t)
 
-;; (setq org-capture-templates
-;;       '(("t" "Todo" entry (file+headline "" "Tasks")
-;;          "* TODO %?\n  %i\n  %a")
-;;         ("j" "Journal" entry (file+datetree "")
-;;          "* %?\nEntered on %U\n  %i\n  %a")))
+<span style="color: #070;">;; </span><span style="color: #070;">(require 'helm)</span>
+<span style="color: #070;">;; </span><span style="color: #070;">(require 'helm-config)</span>
+<span style="color: #070;">;; </span><span style="color: #070;">(helm-mode 1)</span>
+<span style="color: #070;">;; </span><span style="color: #070;">(global-set-key (kbd "M-x") 'helm-M-x)</span>
+<span style="color: #070;">;; </span><span style="color: #070;">(global-set-key (kbd "M-y") 'helm-show-kill-ring)</span>
+<span style="color: #070;">;; </span><span style="color: #070;">(global-set-key (kbd "C-x b") 'helm-mini)</span>
+<span style="color: #070;">;; </span><span style="color: #070;">(global-set-key (kbd "C-x C-f") 'helm-find-files)</span>
+<span style="color: #070;">;; </span><span style="color: #070;">(global-set-key (kbd "C-c h") 'helm-command-prefix)</span>
+<span style="color: #070;">;; </span><span style="color: #070;">(global-unset-key (kbd "C-x c"))</span>
+<span style="color: #070;">;; </span><span style="color: #070;">(global-set-key (kbd "C-h SPC") 'helm-all-mark-rings)</span>
+<span style="color: #070;">;; </span><span style="color: #070;">(global-set-key (kbd "C-c h x") 'helm-register)</span>
+<span style="color: #070;">;; </span><span style="color: #070;">(global-set-key (kbd "C-c h g") 'helm-google-suggest)</span>
+<span style="color: #070;">;; </span><span style="color: #070;">(global-set-key (kbd "C-c h M-:") 'helm-eval-expression-with-eldoc)</span>
+<span style="color: #070;">;; </span><span style="color: #070;">;;(define-key minibuffer-local-map (kbd "C-c C-l") 'helm-minibuffer-history)</span>
 
-(setq org-publish-project-alist
-      `(("hoovy"
-	 :base-directory ,hoovy-root
-	 :recursive t
-	 :publishing-directory ,hoovy-www
-	 :publishing-function org-html-publish-to-html
-	 :html-head-extra ""
-	 :components ())))
+<span style="color: #070;">;; </span><span style="color: #070;">(require 'helm-eshell)</span>
+<span style="color: #070;">;; </span><span style="color: #070;">(add-hook 'eshell-mode-hook</span>
+<span style="color: #070;">;;           </span><span style="color: #070;">#'(lambda ()</span>
+<span style="color: #070;">;;               </span><span style="color: #070;">(define-key eshell-mode-map (kbd "C-c C-l")  'helm-eshell-history)))</span>
+
+<span style="color: #070;">;;</span><span style="color: #070;">(setq helm-M-x-fuzzy-match t) ;; optional fuzzy matching for helm-M-x</span>
+<span style="color: #070;">;; </span><span style="color: #070;">(setq helm-buffers-fuzzy-matching t</span>
+<span style="color: #070;">;;       </span><span style="color: #070;">helm-recentf-fuzzy-match    t)</span>
+<span style="color: #070;">;; </span><span style="color: #070;">(setq helm-semantic-fuzzy-match t</span>
+<span style="color: #070;">;;       </span><span style="color: #070;">helm-imenu-fuzzy-match    t)</span>
+
+(<span style="color: #70b4fa;">defun</span> <span style="color: #fa4;">hoovy-insert-date</span> ()
+  (<span style="color: #70b4fa;">interactive</span>)
+  (insert (format-time-string <span style="color: #99d790;">"%Y-%m-%d"</span>)))
 </pre>
 </div>
 </div>
 </div>
+
+
 <div id="outline-container-org65c89e6" class="outline-2">
 <h2 id="org65c89e6"><span class="section-number-2">5</span> Communications</h2>
 <div class="outline-text-2" id="text-5">
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(setq erc-autojoin-channels-alist
-      '(("freenode.net" "#clim" "#lispgames" "#lisp" "#emacs")
-	("quakenet" "#rgrd")
-	("efnet" "#buddhism")
-	("undernet" "#buddhism"))
+<pre class="src src-emacs-lisp">
+(<span style="color: #70b4fa;">setq</span> browse-url-browser-function 'eww-browse-url)
+
+<span style="color: #070;">;; </span><span style="color: #070;">shouldnt really be here, but in user config</span>
+(<span style="color: #70b4fa;">setq</span> erc-autojoin-channels-alist
+      '((<span style="color: #99d790;">"freenode.net"</span> <span style="color: #99d790;">"#clim"</span> <span style="color: #99d790;">"#lispgames"</span> <span style="color: #99d790;">"#lisp"</span> <span style="color: #99d790;">"#emacs"</span> <span style="color: #99d790;">"#GNUstep"</span> <span style="color: #99d790;">"#ocaml"</span> <span style="color: #99d790;">"#erlang"</span>)
+    (<span style="color: #99d790;">"quakenet"</span> <span style="color: #99d790;">"#rgrd"</span>)
+    (<span style="color: #99d790;">"efnet"</span> <span style="color: #99d790;">"#buddhism"</span>)
+    (<span style="color: #99d790;">"undernet"</span> <span style="color: #99d790;">"#buddhism"</span>))
       erc-fill-column 80
       erc-hide-timestamps t
-      erc-nick "whoman")
+      erc-nick <span style="color: #99d790;">"whoman"</span>)
 
-(require 'elfeed)
-(setq elfeed-feeds
-      '("https://news.ycombinator.com/rss"
-	"http://planet.emacsen.org/atom.xml"))
+(<span style="color: #70b4fa;">require</span> '<span style="color: #99d790;">elfeed</span>)
+(<span style="color: #70b4fa;">setq</span> elfeed-feeds
+      '(<span style="color: #99d790;">"https://news.ycombinator.com/rss"</span>
+        <span style="color: #99d790;">"http://planet.emacsen.org/atom.xml"</span>))
 
-(setq browse-url-browser-function 'eww-browse-url)
+<span style="color: #070;">;; </span><span style="color: #070;">(require 'emms-setup)</span>
+<span style="color: #070;">;; </span><span style="color: #070;">(emms-standard)</span>
+<span style="color: #070;">;; </span><span style="color: #070;">(emms-default-players)</span>
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgba4e074" class="outline-2">
+<h2 id="orgba4e074"><span class="section-number-2">6</span> Objective CAML</h2>
+<div class="outline-text-2" id="text-6">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #070;">;; </span><span style="color: #070;">## added by OPAM user-setup for emacs / base ## 56ab50dc8996d2bb95e7856a6eddb17b ## you can edit, but keep this line</span>
+(<span style="color: #70b4fa;">require</span> '<span style="color: #99d790;">opam-user-setup</span> <span style="color: #99d790;">"~/.emacs.d/opam-user-setup.el"</span>)
+<span style="color: #070;">;; </span><span style="color: #070;">## end of OPAM user-setup addition for emacs / base ## keep this line</span>
 </pre>
 </div>
 </div>
 </div>
 
 <div id="outline-container-org694a3eb" class="outline-2">
-<h2 id="org694a3eb"><span class="section-number-2">6</span> Prolog</h2>
-<div class="outline-text-2" id="text-6">
+<h2 id="org694a3eb"><span class="section-number-2">7</span> Prolog</h2>
+<div class="outline-text-2" id="text-7">
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(require 'ediprolog)
-(global-set-key "\C-c\C-e" 'ediprolog-dwim)
-(add-to-list 'auto-mode-alist '("\\.pl?$" . prolog-mode))
+<pre class="src src-emacs-lisp">(<span style="color: #70b4fa;">require</span> '<span style="color: #99d790;">ediprolog</span>)
+(global-set-key <span style="color: #99d790;">"\C-c\C-e"</span> 'ediprolog-dwim)
+(add-to-list 'auto-mode-alist '(<span style="color: #99d790;">"\\.pl?$"</span> . prolog-mode))
 </pre>
 </div>
 </div>
 </div>
 
 <div id="outline-container-org2802150" class="outline-2">
-<h2 id="org2802150"><span class="section-number-2">7</span> Erlang</h2>
-<div class="outline-text-2" id="text-7">
+<h2 id="org2802150"><span class="section-number-2">8</span> Erlang</h2>
+<div class="outline-text-2" id="text-8">
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(add-to-list 'load-path "/usr/lib/erlang/tools-2.10.1/emacs")
-(setq erlang-root-path "/usr/lib/erlang")
-(add-to-list 'exec-path "/usr/lib/erlang/bin")
+<pre class="src src-emacs-lisp">(add-to-list 'load-path <span style="color: #99d790;">"/usr/lib/erlang/tools-2.10.1/emacs"</span>)
+(<span style="color: #70b4fa;">setq</span> erlang-root-path <span style="color: #99d790;">"/usr/lib/erlang"</span>)
+(add-to-list 'exec-path <span style="color: #99d790;">"/usr/lib/erlang/bin"</span>)
 
-(add-to-list 'load-path "~/Downloads/distel/elisp")
-(require 'distel)
+(add-to-list 'load-path <span style="color: #99d790;">"~/Downloads/distel/elisp"</span>)
+(<span style="color: #70b4fa;">require</span> '<span style="color: #99d790;">distel</span>)
 (distel-setup)
 
-(defvar inferior-erlang-prompt-timeout t)
-(setq inferior-erlang-machine-options '("-sname" "emacs"))
-(setq erl-nodename-cache
-      (make-symbol (concat "emacs@"
-			   (car (split-string
-				 (shell-command-to-string "hostname"))))))
+(<span style="color: #70b4fa;">defvar</span> <span style="color: #e090d7;">inferior-erlang-prompt-timeout</span> t)
+(<span style="color: #70b4fa;">setq</span> inferior-erlang-machine-options '(<span style="color: #99d790;">"-sname"</span> <span style="color: #99d790;">"emacs"</span>))
+(<span style="color: #70b4fa;">setq</span> erl-nodename-cache
+      (make-symbol (concat <span style="color: #99d790;">"emacs@"</span>
+               (car (split-string
+                 (shell-command-to-string <span style="color: #99d790;">"hostname"</span>))))))
 
-;; (cl-flet ((erlpath (x) (concat x "/Program Files/erl9.0/")))
-;;   (add-to-list 'load-path (erlpath "/lib/tools-2.10/emacs"))
-;;   (setq erlang-root-dir (erlpath "/erts-9.0"))
-;;   (add-to-list 'exec-path (erlpath "/erts-9.0/bin"))
-;;   (setq erlang-man-root-dir (erlpath "/erts-9.0/man")))
+<span style="color: #070;">;; </span><span style="color: #070;">(cl-flet ((erlpath (x) (concat x "/Program Files/erl9.0/")))</span>
+<span style="color: #070;">;;   </span><span style="color: #070;">(add-to-list 'load-path (erlpath "/lib/tools-2.10/emacs"))</span>
+<span style="color: #070;">;;   </span><span style="color: #070;">(setq erlang-root-dir (erlpath "/erts-9.0"))</span>
+<span style="color: #070;">;;   </span><span style="color: #070;">(add-to-list 'exec-path (erlpath "/erts-9.0/bin"))</span>
+<span style="color: #070;">;;   </span><span style="color: #070;">(setq erlang-man-root-dir (erlpath "/erts-9.0/man")))</span>
 
-(defun my-erlang-mode-hook ()
-	;; when starting an Erlang shell in Emacs, default in the node name
-	(setq inferior-erlang-machine-options '("-sname" "emacs"))
-	;; add Erlang functions to an imenu menu
-	(imenu-add-to-menubar "imenu")
-	;; customize keys
-	(local-set-key [return] 'newline-and-indent))
+(<span style="color: #70b4fa;">defun</span> <span style="color: #fa4;">my-erlang-mode-hook</span> ()
+        <span style="color: #070;">;; </span><span style="color: #070;">when starting an Erlang shell in Emacs, default in the node name</span>
+        (<span style="color: #70b4fa;">setq</span> inferior-erlang-machine-options '(<span style="color: #99d790;">"-sname"</span> <span style="color: #99d790;">"emacs"</span>))
+        <span style="color: #070;">;; </span><span style="color: #070;">add Erlang functions to an imenu menu</span>
+        (imenu-add-to-menubar <span style="color: #99d790;">"imenu"</span>)
+        <span style="color: #070;">;; </span><span style="color: #070;">customize keys</span>
+        (local-set-key [return] 'newline-and-indent))
 
-;; Some Erlang customizations
+<span style="color: #070;">;; </span><span style="color: #070;">Some Erlang customizations</span>
 (add-hook 'erlang-mode-hook 'my-erlang-mode-hook)
 
-(require 'erlang-start)
+(<span style="color: #70b4fa;">require</span> '<span style="color: #99d790;">erlang-start</span>)
 
-;; (add-to-list 'auto-mode-alist '("\\.erl?$" . erlang-mode))
-;; (add-to-list 'auto-mode-alist '("\\.hrl?$" . erlang-mode))
+<span style="color: #070;">;; </span><span style="color: #070;">(add-to-list 'auto-mode-alist '("\\.erl?$" . erlang-mode))</span>
+<span style="color: #070;">;; </span><span style="color: #070;">(add-to-list 'auto-mode-alist '("\\.hrl?$" . erlang-mode))</span>
 
-;;(erlang-indent-level 4)
+<span style="color: #070;">;;</span><span style="color: #070;">(erlang-indent-level 4)</span>
 </pre>
 </div>
 </div>
 </div>
 
 <div id="outline-container-orgd901d2f" class="outline-2">
-<h2 id="orgd901d2f"><span class="section-number-2">8</span> Lisp</h2>
-<div class="outline-text-2" id="text-8">
+<h2 id="orgd901d2f"><span class="section-number-2">9</span> Lisp</h2>
+<div class="outline-text-2" id="text-9">
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(require 'cl)
+<pre class="src src-emacs-lisp">(<span style="color: #70b4fa;">require</span> '<span style="color: #99d790;">cl</span>)
 
-(defun slime-style-init-command (port-filename _coding-system extra-args)
-  "Return a string to initialize Lisp."
-  (let ((loader (if (file-name-absolute-p slime-backend)
-		    slime-backend
-		  (concat slime-path slime-backend))))
-    ;; Return a single form to avoid problems with buffered input.
-    (format "%S\n\n"
-	    `(progn
-	       (load ,(slime-to-lisp-filename (expand-file-name loader))
-		     :verbose t)
-	       (funcall (read-from-string "swank-loader:init"))
-	       (funcall (read-from-string "swank:start-server")
-			,(slime-to-lisp-filename port-filename)
-			,@extra-args)))))
+(<span style="color: #70b4fa;">defun</span> <span style="color: #fa4;">slime-style-init-command</span> (port-filename _coding-system extra-args)
+  <span style="color: #99d790;">"Return a string to initialize Lisp."</span>
+  (<span style="color: #70b4fa;">let</span> ((loader (<span style="color: #70b4fa;">if</span> (file-name-absolute-p slime-backend)
+                    slime-backend
+                  (concat slime-path slime-backend))))
+    <span style="color: #070;">;; </span><span style="color: #070;">Return a single form to avoid problems with buffered input.</span>
+    (format <span style="color: #99d790;">"%S\n\n"</span>
+            `(<span style="color: #70b4fa;">progn</span>
+               (load ,(slime-to-lisp-filename (expand-file-name loader))
+                     <span style="color: #ff8;">:verbose</span> t)
+               (funcall (read-from-string <span style="color: #99d790;">"swank-loader:init"</span>))
+               (funcall (read-from-string <span style="color: #99d790;">"swank:start-server"</span>)
+                        ,(slime-to-lisp-filename port-filename)
+            ,@extra-args)))))
 
-(defun slime-style (&amp;optional style)
-  (interactive
-   (list (intern-soft (read-from-minibuffer "Style: " "nil"))))
-  (lexical-let ((style style))
+(<span style="color: #70b4fa;">defun</span> <span style="color: #fa4;">slime-style</span> (<span style="color: #dd9dd4;">&amp;optional</span> style)
+  (<span style="color: #70b4fa;">interactive</span>
+   (list (intern-soft (read-from-minibuffer <span style="color: #99d790;">"Style: "</span> <span style="color: #99d790;">"nil"</span>))))
+  (<span style="color: #70b4fa;">lexical-let</span> ((style style))
     (slime-start
-     :init (lambda (x y)
-	     (slime-style-init-command
-	      x y `(:style ,style :dont-close t))))))
+     <span style="color: #ff8;">:init</span> (<span style="color: #70b4fa;">lambda</span> (x y)
+         (slime-style-init-command
+          x y `(<span style="color: #ff8;">:style</span> ,style <span style="color: #ff8;">:dont-close</span> t))))))
 
-(setq inferior-lisp-program "sbcl")
+(<span style="color: #70b4fa;">setq</span> inferior-lisp-program <span style="color: #99d790;">"sbcl"</span>)
+(<span style="color: #70b4fa;">setq</span> slime-lisp-implementations
+      '((sbcl (<span style="color: #99d790;">"/usr/local/bin/sbcl"</span>))
+    (ecl (<span style="color: #99d790;">"/usr/local/bin/ecl"</span>))
+    (nova (<span style="color: #99d790;">"~/nova/nova"</span>))))
 
-;; (setq slime-lisp-implementations
-;;       '((sbcl-w32 ("C:\\msys32\\mingw32\\bin\\sbcl.exe"
-;; 		   "--core"
-;; 		   "C:\\msys32\\mingw32\\lib\\sbcl\\sbcl.core"))
-;; 	(sbcl-old ("C:\\Program Files\\Steel Bank Common Lisp\\1.3.12\\sbcl.exe"
-;; 	       "--core"
-;; 	       "C:\\Program Files\\Steel Bank Common Lisp\\1.3.12\\sbcl.core"))
-;; 	(ecl ("c:\\msys32\\mingw32\\ecl.exe"))
-;; 	(nova ("c:\\Users\\Quaker\\nova\\nova.exe"))))
-
-;(add-to-list 'load-path "/users/quaker/quicklisp/dists/quicklisp/software/slime-v2.18")
-;(require 'slime-autoloads)
-(load "~/quicklisp/slime-helper.el")
-(setq slime-auto-connect 'ask)
+<span style="color: #070;">;</span><span style="color: #070;">(require 'slime-autoloads)</span>
+(load <span style="color: #99d790;">"~/quicklisp/slime-helper.el"</span>)
+(<span style="color: #70b4fa;">setq</span> slime-auto-connect 'ask)
 (slime-setup '(slime-fancy slime-mrepl slime-banner slime-tramp
-			   slime-xref-browser slime-highlight-edits
-			   slime-sprof slime-asdf slime-company))
-(setq common-lisp-hyperspec-root "file:///Users/Quaker/Downloads/HyperSpec/")
-(global-set-key "\C-cs" 'slime-selector)
-(setf slime-scratch-file "~/hoovy/scratch.lisp")
+               slime-xref-browser slime-highlight-edits
+               slime-sprof slime-asdf slime-company))
+(<span style="color: #70b4fa;">setq</span> common-lisp-hyperspec-root <span style="color: #99d790;">"file:///home/lyndon/Downloads/HyperSpec/"</span>)
+(global-set-key <span style="color: #99d790;">"\C-cs"</span> 'slime-selector)
+(<span style="color: #70b4fa;">setf</span> slime-scratch-file <span style="color: #99d790;">"~/hoovy/scratch.lisp"</span>)
 
-;; (defun my-slime-setup ()
-;;   (require 'slime)
-;;   (slime-setup))
+<span style="color: #070;">;; </span><span style="color: #070;">(defun my-slime-setup ()</span>
+<span style="color: #070;">;;   </span><span style="color: #070;">(require 'slime)</span>
+<span style="color: #070;">;;   </span><span style="color: #070;">(slime-setup))</span>
 
-;; (defvar my--slime-setup-done nil)
-;; (defun my-slime-setup-once ()
-;;   (unless my--slime-setup-done
-;;     (my-slime-setup)
-;;     (setq my--slime-setup-done t)))
-;; (defadvice lisp-mode (before my-slime-setup-once activate)
-;;   (my-slime-setup-once))
+<span style="color: #070;">;; </span><span style="color: #070;">(defvar my--slime-setup-done nil)</span>
+<span style="color: #070;">;; </span><span style="color: #070;">(defun my-slime-setup-once ()</span>
+<span style="color: #070;">;;   </span><span style="color: #070;">(unless my--slime-setup-done</span>
+<span style="color: #070;">;;     </span><span style="color: #070;">(my-slime-setup)</span>
+<span style="color: #070;">;;     </span><span style="color: #070;">(setq my--slime-setup-done t)))</span>
+<span style="color: #070;">;; </span><span style="color: #070;">(defadvice lisp-mode (before my-slime-setup-once activate)</span>
+<span style="color: #070;">;;   </span><span style="color: #070;">(my-slime-setup-once))</span>
 
 
-(autoload 'enable-paredit-mode "paredit"
-  "Turn on pseudo-structural editing of Lisp code." t)
+(autoload 'enable-paredit-mode <span style="color: #99d790;">"paredit"</span>
+  <span style="color: #99d790;">"Turn on pseudo-structural editing of Lisp code."</span> t)
 
-(autoload 'snoopy-mode "snoopy"
-    "Turn on unshifted mode for characters in the keyboard number row."
+(autoload 'snoopy-mode <span style="color: #99d790;">"snoopy"</span>
+    <span style="color: #99d790;">"Turn on unshifted mode for characters in the keyboard number row."</span>
     t)
 
-;; (macrolet ((fn (&amp;body body)
-;; 	       `(lambda (_) (print ,@body " ----"))))
-;;   (mapc fn '(1 2 3 4)))
+<span style="color: #070;">;; </span><span style="color: #070;">(macrolet ((fn (&amp;body body)</span>
+<span style="color: #070;">;; </span><span style="color: #070;">        `(lambda (_) (print ,@body " ----"))))</span>
+<span style="color: #070;">;;   </span><span style="color: #070;">(mapc fn '(1 2 3 4)))</span>
 
-(let ((modes-to-hook '(emacs-lisp-mode-hook
-		       eval-expression-minibuffer-setup-hook
-		       ielm-mode-hook
-		       lisp-mode-hook
-		       lisp-interaction-mode-hook
-		       scheme-mode-hook)))
-  (mapc (lambda (a)
-	  (add-hook a 'snoopy-mode)
-	  (add-hook a #'enable-paredit-mode))
-	modes-to-hook))
+(<span style="color: #70b4fa;">let</span> ((modes-to-hook '(emacs-lisp-mode-hook
+               eval-expression-minibuffer-setup-hook
+               ielm-mode-hook
+               lisp-mode-hook
+               lisp-interaction-mode-hook
+               scheme-mode-hook)))
+  (mapc (<span style="color: #70b4fa;">lambda</span> (a)
+      (add-hook a 'snoopy-mode)
+      (add-hook a #'enable-paredit-mode))
+    modes-to-hook))
 
-(add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode)
-(add-hook 'lisp-interaction-mode-hook 'turn-on-eldoc-mode)
-(add-hook 'ielm-mode-hook 'turn-on-eldoc-mode)
+<span style="color: #070;">;;</span><span style="color: #070;">(add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode)</span>
+<span style="color: #070;">;;</span><span style="color: #070;">(add-hook 'lisp-interaction-mode-hook 'turn-on-eldoc-mode)</span>
+<span style="color: #070;">;;</span><span style="color: #070;">(add-hook 'ielm-mode-hook 'turn-on-eldoc-mode)</span>
 
-;; (add-hook 'emacs-lisp-mode-hook (lambda () (lispy-mode 1)))
-;; (add-hook 'lisp-mode-hook (lambda () (lispy-mode 1)))
+<span style="color: #070;">;; </span><span style="color: #070;">(add-hook 'emacs-lisp-mode-hook (lambda () (lispy-mode 1)))</span>
+<span style="color: #070;">;; </span><span style="color: #070;">(add-hook 'lisp-mode-hook (lambda () (lispy-mode 1)))</span>
 
-;; (mapc (lambda (x)
-;; 	(add-hook (quote x) (lambda () (lispy-mode))))
-;;       '(emacs-lisp-mode-hook))
+<span style="color: #070;">;; </span><span style="color: #070;">(mapc (lambda (x)</span>
+<span style="color: #070;">;; </span><span style="color: #070;"> (add-hook (quote x) (lambda () (lispy-mode))))</span>
+<span style="color: #070;">;;       </span><span style="color: #070;">'(emacs-lisp-mode-hook))</span>
 
 
-(require 'redshank-loader "~/.emacs.d/site-lisp/redshank/redshank-loader")
-(eval-after-load "redshank-loader"
+(<span style="color: #70b4fa;">require</span> '<span style="color: #99d790;">redshank-loader</span> <span style="color: #99d790;">"~/.emacs.d/site-lisp/redshank/redshank-loader"</span>)
+(eval-after-load <span style="color: #99d790;">"redshank-loader"</span>
   `(redshank-setup '(lisp-mode-hook
-		     slime-repl-mode-hook
-		     ielm-mode-hook
-		     emacs-lisp-mode-hook) t))
+             slime-repl-mode-hook
+             ielm-mode-hook
+             emacs-lisp-mode-hook) <span style="color: #ff4b4b;">t))</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1ac0d17" class="outline-2">
+<h2 id="org1ac0d17"><span class="section-number-2">10</span> Hoovy</h2>
+<div class="outline-text-2" id="text-10">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(org-babel-load-file (concat <span style="color: #99d790;">"~/hoovy/hoovy.org"</span>)) <span style="color: #070;">;; </span><span style="color: #070;">FIXME: use hoovy-root</span>
 </pre>
 </div>
 </div>
@@ -558,7 +586,7 @@ for the JavaScript code in this tag.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Lyndon Tremblay</p>
-<p class="date">Created: 2017-10-02 Mon 12:50</p>
+<p class="date">Created: 2017-12-23 Sat 00:35</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
